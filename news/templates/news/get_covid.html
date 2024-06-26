@@ -1,0 +1,45 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>Covid Updates</title>
+{% endblock%}
+
+{% block main_content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">Covid Patients</h1>
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2">
+                <a class="btn btn-primary btn-sm ms-auto"
+                href="/news/covid_form">Add New Updates</a>
+                <table class="table-striped">
+                    <tr>
+                        <th>New Cases </th>
+                        <th>Total Tests Done</th>
+                        <th>Total patients recovered</th>
+                        <th>Recovery Percentage</th>
+                        <th>Deaths</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in covid %}
+                    <tr>
+                        <td> {{ i.new_cases }}</td>
+                        <td> {{ i.tests_done }}</td>
+                        <td>{{i.recovered_patients}}</td>
+                        <td>{{i.recovery_percentage}}</td>
+                        <td>{{i.total_deaths}}</td>
+                        <td> {{ i.created_date }}</td>
+                        <td><a class="btn btn-primary btn-sm" href="/news/covid_update_form/{{i.id}}">Edit</a> </td>&nbsp;
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

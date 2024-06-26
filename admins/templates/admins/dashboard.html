@@ -1,0 +1,87 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+<title>Admin-Dashboard</title>
+{% endblock %}
+{% block main_content %}
+<style>
+    .card-body a{
+    text-decoration:none;
+    color:#fff;
+    }
+
+    .card-body a:hover{
+    color:orange;
+    }
+
+</style>
+<div class="container">
+    <h1 style="text-align:center">Admin Dashboard</h1> <br>
+    {% include 'messages.html' %}
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total News</div>
+                <div class="card-body bg-secondary">
+                    <a href="/news/get_news">
+                        <h1 class="card-title text-center">{{news}}</h1></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Categories</div>
+                <div class="card-body bg-secondary">
+                    <a href="/news/get_category"><h1 class="card-title text-center">{{category}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Articles</div>
+                <div class="card-body bg-secondary">
+                    <a href="/news/get_article"><h1 class="card-title text-center">{{articles}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Covid updates</div>
+                <div class="card-body bg-secondary">
+                    <a href="/news/get_covid"><h1 class="card-title text-center">{{covid}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Users</div>
+                <div class="card-body bg-secondary">
+                    <a href="/admins/users"><h1 class="card-title text-center">{{user}}</h1></a>
+                </div>
+                </div>
+            </div>
+        <div class="col">
+            <div class="card text-white mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center bg-dark">Total Admins</div>
+                <div class="card-body bg-secondary">
+                    <a href="/admins/admins"> <h1 class="card-title text-center">{{admin}}</h1>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+{% endblock %}

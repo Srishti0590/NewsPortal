@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>My Favourites </title>
+{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">My favourites</h1>
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2 m-5 shadow-lg">
+                <div class="card-body">
+                    {% for i in items %}
+                    <h1>{{ i.news.news_title }} </h1>
+                        <h6> {{ i.news.news_description }}</h6>
+                    <h6> {{ i.created_date }} </h6>
+                        <h5><a class="btn btn-primary btn-sm" href="/news/remove_favourite_item/{{i.id}}">Remove from favourites</a> &nbsp;
+                        </h5>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

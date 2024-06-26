@@ -1,0 +1,53 @@
+<style>
+#login{
+    background-image: url(static/images/news.png);
+    width:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+#log{
+    margin-top:100px;
+}
+</style>
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title>Login</title>
+{% endblock%}
+{% block main_content %}
+
+<div id="login">
+
+<div class="container">
+<div class="row">
+<div id="log">
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Login</h1>
+          {% include 'messages.html'%}
+        <div class="card py-2 px-2">
+        <form class="form" action="" method="POST">
+            {% csrf_token %}
+            {{ form_login | bootstrap_horizontal }}
+            <button type="submit" class="btn btn-primary mt-3" >Submit</button>
+            <p><a class="nav-link {{activate_register}}" href="/password_reset" style="text-decoration:underline"> Forgot Password? click here to reset your password.</a></p> <br>
+            <p><a class="nav-link {{activate_register}}" href="/register" style="text-decoration:underline"> Don't have an account? Register Here!</a></p>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter username"
+    form_fields[2].placeholder = "Enter password"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}
+ </div>

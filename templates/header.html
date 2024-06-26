@@ -1,0 +1,95 @@
+<style>
+ #style{
+   font-size:30px;
+   font-family: Eve;
+    color: red;
+
+}
+
+#style, #cs{
+transition: transform .2s;
+}
+#style:hover, #cs:hover{
+    text-decoration:underline;
+    color: green;
+    transform: scale(1.25);
+}
+
+#side, #side1{
+    padding-left: 800px;
+    font-size: 24px;
+    color: blue;
+    opacity: 0.8;
+
+    }
+
+@media screen and (max-width: 1450px) and (min-width: 400px) {
+  #side{padding-left:0px;}
+  #side1{padding-left:0px;}
+
+
+}
+#side:hover{
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    -o-transform: rotateX(360deg);
+    -ms-transform: rotateX(360deg);
+    transition: transform 2s;
+
+}
+
+</style>
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-warning text-light ">
+  <div class="container-fluid" id="head" >
+    <a class="navbar-brand", id="cs" href="home"><img src="{% static 'images/LOGO.jpg' %}" class="d-block w-400" alt="..."></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item " id="style" >
+          <a class="nav-link {{activate_category}} " href="/news/show_categories">News</a>
+        </li>
+
+          <!-- <li class="nav-item "  >
+          <a class="nav-link {{activate_news}} " href="/news/show_news">News</a>
+        </li> -->
+          <li class="nav-item "  id="style" >
+          <a class="nav-link {{activate_article}} " href="/news/show_article">Articles</a>
+        </li>
+          <li class="nav-item"  id="style">
+          <a class="nav-link " href="/news/show_covid">Covid updates</a>
+        </li>
+
+        {% if user.is_authenticated %}
+
+
+        <div id="side1">
+      <div class="btn-group">
+        <button type="button" class="btn " style="font-size:24px;"><img src="/{{request.user.profile.profile_picture}}"
+                                                                        width="40" class="img-fluid"> {{user.username}}</button>
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item {{activate_profile}}" href="/profile">My Profile</a>
+          <a class="dropdown-item {{activate_my_favourite}}" href="/news/my_favourite">My favourites</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+        </div>
+      </div>
+        {% else %}
+          <li class="nav-item" id="side">
+          <a class="nav-link {{activate_login}}" href="/login"> <i class="fas fa-user"></i>Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

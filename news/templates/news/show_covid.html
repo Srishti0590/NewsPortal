@@ -1,0 +1,51 @@
+<style>
+    #covid{
+    text-align:center;
+    justify-content:center;
+    }
+
+#logo{
+    margin-top:40px;
+}
+
+
+</style>
+
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Covid Updates</title>
+{% endblock title %}
+
+{% block main_content %}
+<div id="covid">
+<h1 id="logo"><img src="{% static 'images/LOGO.jpg' %}" alt="..."></h1>
+<h1 style="color:red;">Breaking News</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        {% for i in covid %}
+        <div class="card col-md-8 m-3 shadow-lg">
+
+            <div class="card-body">
+                <h4>New Cases Confirmed</h4>
+                <h4 class="card-title" style="color:red;">{{i.new_cases}}</h4> <br> <br>
+                <h4>Total tests done in the past 24 hours</h4>
+                <h4 class="card-title" style="color:red;">{{i.tests_done}} </h4> <br> <br>
+                <h4 class="card-title"><a style="color:red;">{{i.recovered_patients}}</a> in the past 24 hours</h4> <br>
+                <h4 class="card-title"> Recovered percentage: <a style="color:red;">{{i.recovery_percentage}} </a></h4> <br>
+                <h4 class="card-title"> <a style="color:red;">{{i.total_deaths}}</a> registered</h4> <br>
+                <h6 class="card-title", style="text-align:right">Source: MOHP  <br> Time: 16:15. <br> Updated on this website: {{i.created_date}}</h6>
+
+
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+</div>
+    </div>
+
+
+{% endblock main_content %}
+

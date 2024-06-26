@@ -1,0 +1,40 @@
+<style>
+#news{
+transition: transform .2s;
+}
+
+#news:hover{
+    text-decoration:underline;
+    color: orange;
+    transform: scale(1.05);
+}
+</style>
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>News</title>
+{% endblock title %}
+
+{% block main_content %}
+<div style="background-color:rgb(105,105,105)">
+<h1 style="color:yellow; text-align:center">All Categories</h1>
+<div class="container">
+    <div class="row justify-content-around">
+        {% for i in categories %}
+        <div class="card col-md-8 shadow m-3">
+
+            <div class="card-body">
+                <h1 class="card-title" style="color:orange">{{i.category_name}}</h1>
+                <h4 class="card-text">{{i.category_description}}</h4>
+                <a class="nav-link {{activate_news}} " href="/news/show_news/{{i.id}}" style="font-size:20px;" id="news">See books</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+    </div>
+{% endblock main_content %}
+

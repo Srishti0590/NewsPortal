@@ -1,0 +1,203 @@
+<style>
+
+#home{
+    background-image: url(static/images/news.jpg);
+    width:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.main, #main1{
+    display: inline-flex;
+    margin-left: 150px;
+    justify-content: center;
+}
+
+
+#padding, #padding1{
+    margin:30px;
+    text-align: center;
+    justify-content: center;
+    padding-top:30px ;
+    font-size: 26px;
+    padding-right: 260px;
+}
+#send{
+    background-color: rgb(0, 255, 85);
+    border-radius: 10px;
+}
+.texts{
+    background-color: rgb(226, 224, 224);
+    width:450px;
+    border-width: 2px;
+    margin: 3px;
+    font-size: 25px;
+    padding-top: 3px;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+
+</style>
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Homepage</title>
+{% endblock title %}
+
+{% block main_content %}
+<body>
+<div class="advertisements">
+    {% for i in advertisements %}
+    <img src="/{{i.ad_title}}" width="100%" alt="/{{i.ad_title}}" />
+    {% endfor%}
+</div>
+<div class="container-fluid p-0" id="home">
+<!--    <p style="color:black"><time datetime="YYYY-MM-DDThh:mm:ssTZD"></p>-->
+</div>
+
+
+<div class="container mt-4 " id="main1">
+<div class="container mt-4">
+    <img src="static/images/89056700.gif" width="400" class="img-fluid"> <br> <br> <br>
+    <img src="static/images/ad4.gif" width="400" class="img-fluid">
+</div>
+
+
+    <div class="row justify-content-around">
+        <div class="card col-md-10 shadow-lg">
+            <div class="card-body" >
+                <h1 class="text-center" style="color:rgb(76, 129, 22)">About Us</h1>
+                <p class="card-text" style="font-size:20px;">The daily news founded in 2002 is Nepal’s leading News Portal with the aim of reaching millions of Nepalese in Nepal
+            and significantly worldwide Nepalese Diaspora who are eager to stay in touch with Nepal based news and stories in English because
+            of the varied contents presented in an eye pleasing design format. <br> <br> It has taken a prominent position in the web market and quickly
+            progressing to capture the top slot. We also remain clung to the tree of journalistic ethics by serving the fresh news on the platter
+            of absolute authenticity and our comments stand only as a guard so that all the users of our portal do not carried away from the truth.
+            Our news persons are prompt in responding to any event by collecting first hand data. Personal interviews of concerned people of that event or incident
+            reinforce the fabric of the information not to say our questionnaires are very yielding</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+    <img src="static/images/ad2.gif" width="600" class="img-fluid"> <br> <br> <br>
+        <img src="static/images/ad3.gif" width="600" class="img-fluid">
+</div>
+</div>
+
+
+<div class="container mt-4 ">
+    <h1 class="text-center" style="color:rgb(76, 129, 22)">Our Team</h1>
+    <div class="row justify-content-around">
+        <div class="card col-md-3 shadow-lg " >
+            <img src="{% static 'images/reporter1.png' %}" class="card-img-top" alt="..." id="myimg">
+            <div class="card-body">
+                <h5 class="card-title ">Journalist</h5>
+                <p class="card-text">Mr. Sanjay Silwal has been working in this organisation as a senior journalisf for over 5 years now.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+            </div>
+        </div>
+        <div class="card col-md-3 shadow-lg" >
+            <img src="{% static 'images/CheifEditor.jpg' %}" class="card-img-top" alt="..." id="myimg">
+            <div class="card-body">
+                <h5 class="card-title">Chief editor</h5>
+                <p class="card-text">Ms. Indira Rao is the chief editor of the organisation who handles all the editing process.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+            </div>
+        </div>
+        <div class="card col-md-3  shadow-lg " >
+            <img src="{% static 'images/Reporter.jpg' %}" class="card-img-top" alt="..." id="myimg" >
+            <div class="card-body">
+                <h5 class="card-title">Reporter</h5>
+                <p class="card-text">Ms. Radhika Sherpa is a reporter assigned for the news of Kathmandy valley only.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+            </div>
+        </div>
+
+        <div class="card col-md-3 m-4 shadow-lg">
+            <img src="{% static 'images/Reporter.jpg' %}" class="card-img-top" alt="..." id="myimg">
+            <div class="card-body">
+                <h5 class="card-title">Reporter</h5>
+                <p class="card-text">Ms. Radhika Sherpa is a reporter assigned for the news of Kathmandy valley only.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+            </div>
+        </div>
+
+        <div class="card col-md-3 m-4 shadow-lg" >
+            <img src="{% static 'images/Reporter.jpg' %}" class="card-img-top" alt="..." id="myimg">
+            <div class="card-body">
+                <h5 class="card-title">Reporter</h5>
+                <p class="card-text">Ms. Radhika Sherpa is a reporter assigned for the news of Kathmandy valley only.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+            </div>
+        </div>
+
+        <div class="card col-md-3 m-4 shadow-lg">
+            <img src="{% static 'images/Reporter.jpg' %}" class="card-img-top" alt="..."  id="myimg">
+            <div class="card-body">
+                <h5 class="card-title">Reporter</h5>
+                <p class="card-text">Ms. Radhika Sherpa is a reporter assigned for the news of Kathmandy valley only.</p>
+                <a href="https//www.facebook.com/"> <i class="fab fa-facebook fa-2x" style="color:black"></i></a>
+                <a href="https//www.instagram.com/"> <i class="fab fa-instagram-square fa-2x" style="color:black"></i></a>
+
+                <a href="https//www.twitter.com/"> <i class="fab fa-twitter fa-2x" style="color:black"></i></a>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" id="contact_us">
+
+    <div id="padding">
+        <h2 style="color: rgb(143, 194, 92);">Get in touch with us</h2>
+        <input type="text" placeholder="Enter your full name" class="texts"><br>
+        <input type="text" placeholder="Enter your valid email address" class="texts"> <br>
+        <input type="text" placeholder="Enter your Contact number" class="texts"> <br>
+        <textarea rows="8" cols="36" placeholder="Place your feedbacks and queries here."></textarea><br>
+
+        <input type="button" onclick="return message('Thank you for your feedback?')" class="texts" value="Send" id="send">
+    </div>
+    <div id="padding1">
+        <br><i  class="fas fa-home"></i>
+        <h2 style="color: rgb(143, 194, 92);">Address</h2>
+        <p>Newroad, Katmandu</p><br>
+        <i class="fas fa-phone"></i>
+        <h2 style="color: rgb(143, 194, 92);">Phone</h2>
+        <p>+1(234) 567 8901 <br> +977- 4454823</p><br>
+         <i class="fa fa-envelope fa" aria-hidden="true"></i>
+        <h2 style="color: rgb(143, 194, 92);">Email</h2>
+        <p>info@tdn.com.np <br> tdn23@gmail.com</p><br>
+
+    </div>
+    </div>
+
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.451278418032!2d85.30937981506199!3d27.70334958279355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18550c29af13%3A0x8efc346d0fd5e569!2z4KSo4KSv4KS-4KSBIOCkuOCkoeCklSwgS2F0aG1hbmR1IDQ0NjAw!5e0!3m2!1sen!2snp!4v1632244888075!5m2!1sen!2snp" width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+
+    </iframe>
+   </div>
+
+</body>
+
+{% endblock main_content %}

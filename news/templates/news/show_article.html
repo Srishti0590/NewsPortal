@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("a").click(function(){
+    $("p").toggle();
+  });
+});
+</script>
+<title>Articles</title>
+{% endblock title %}
+
+{% block main_content %}
+<div style="background-color:rgb(105,105,105)">
+<h1 style="color:yellow; text-align:center">All Articles</h1>
+<div class="container">
+    <div class="row justify-content-around">
+        {% for i in articles %}
+        <div class="card col-md-8 m-3 shadow-lg">
+
+            <div class="card-body">
+                <h3 class="card-title m-4" style="text-align:center; color:grey;">{{i.article_title}}</h3>
+                <p class="card-text">{{i.article_description}}</p>
+                <a href="#" class="btn btn-primary">View less</a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock main_content %}

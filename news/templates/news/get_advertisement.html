@@ -1,0 +1,37 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Advertisements</title>
+{% endblock%}
+
+{% block main_content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">All Advertisements</h1>
+            {% include 'messages.html' %}
+            <div class="card py-2 px-2">
+                <a class="btn btn-primary btn-sm ms-auto"
+                href="/news/advertisement_form"
+                >Add New Advertisement</a>
+                <table class="table-striped">
+                    <tr>
+                        <th>Image</th>
+                         <th>Actions</th>
+                    </tr>
+                    {% for i in advertisement %}
+                    <tr>
+                        <td> <img src="/{{i.ad_title}}" width="200" /></td>
+                           <td> <a class="btn btn-danger btn-sm" href="/news/delete_advertisement/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this advertisement?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
